@@ -1293,9 +1293,12 @@ svg {
     gap: 25px;
   }
   .footer-bottom {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
   }
   .footer-bottom nav {
+    justify-content: center;
     gap: 18px;
   }
   .site-footer {
