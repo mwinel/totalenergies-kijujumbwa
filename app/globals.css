@@ -683,9 +683,25 @@ svg {
 }
 .footer-top {
   display: grid;
-  grid-template-columns: 1.7fr 1fr 0.65fr;
+  grid-template-areas: "brand" "explore" "contact";
+  grid-template-columns: minmax(0, 1fr);
   gap: 50px;
   padding-bottom: 45px;
+}
+.footer-brand {
+  grid-area: brand;
+}
+@media (min-width: 761px) {
+  .footer-top {
+    grid-template-areas: "brand contact explore";
+    grid-template-columns: 1.7fr 1fr 0.65fr;
+  }
+}
+.footer-contact {
+  grid-area: contact;
+}
+.footer-explore {
+  grid-area: explore;
 }
 .footer-top h2 {
   font-size: 14px;
@@ -1274,11 +1290,7 @@ svg {
     margin-top: 26px;
   }
   .footer-top {
-    grid-template-columns: 1fr 1fr;
     gap: 25px;
-  }
-  .footer-top > div:first-child {
-    grid-column: 1 / -1;
   }
   .footer-bottom {
     flex-direction: column;
